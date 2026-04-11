@@ -40,6 +40,7 @@ console.log(vip)
 console.log(typeof(vip))
 
 
+
 console.log('----------------------------')
 console.log(' -     Ficha do aluno     - ')
 console.log('----------------------------')
@@ -50,4 +51,6 @@ console.log(`Idade: ${idade}`)
 console.log(`Peso: ${peso}kg`)
 console.log(`Altura: ${altura}m`)
 console.log(`Vip: ${vip}`)
+console.log(`Batimento por minuto: ${208 - (idade * 0.7)}bpm`)
+console.log(`Índice de Massa Corporal: ${(peso / (altura * altura)).toFixed(2)} `)
 console.log('-----------------------------')
