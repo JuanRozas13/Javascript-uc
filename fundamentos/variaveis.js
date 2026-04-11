@@ -52,5 +52,6 @@ console.log(`Peso: ${peso}kg`)
 console.log(`Altura: ${altura}m`)
 console.log(`Vip: ${vip}`)
 console.log(`Batimento por minuto: ${208 - (idade * 0.7)}bpm`)
+// .toFixed(2) é usado para limitar o numero de casas decimais a 2
 console.log(`Índice de Massa Corporal: ${(peso / (altura * altura)).toFixed(2)} `)
 console.log('-----------------------------')
