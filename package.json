@@ -15,12 +15,20 @@
     "type": "git",
     "url": "git+https://github.com/JuanRozas13/Javascript-joseAssis.git"
   },
-  "keywords": ["javascript", "logica-programacao", "estudo"],
+  "keywords": [
+    "javascript",
+    "logica-programacao",
+    "estudo"
+  ],
   "author": "Juan Rozas",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
     "url": "https://github.com/JuanRozas13/Javascript-joseAssis/issues"
   },
-  "homepage": "https://github.com/JuanRozas13/Javascript-joseAssis#readme"
+  "homepage": "https://github.com/JuanRozas13/Javascript-joseAssis#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "prompt-sync": "^4.2.0"
+  }
 }

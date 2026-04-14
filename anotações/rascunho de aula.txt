@@ -1,0 +1,47 @@
+Variáveis (memória)
+
+Tipos primitivos:
+String (Caracteres)
+Number (Números)
+Boolean (verdadeiro / falso)
+
+
+Entrada -> Processamento -> Saída
+                 |
+               memória
+
+--------------------------------------------------------
+Nomes de variáveis (clean code)
+
+Regras:
+1) Escolher nomes que estejam relacionados aos problemas
+2) Não usar palavras reservadas da linguagem
+3) iniciar sempre com letra minúscula
+4) Não usar acentos, caracteres especiais e espaço
+5) Se o nome da variável precisa de 2 ou mais palavras usar a técnica camel case
+Exemplo:
+nome aluno  ->  nomeAluno
+
+-------------------------------------------------
+node -> plataforma de execução da linguagem JS
+comandos básicos node
+
+node -v  (verificar a versão do node)
+node arquivo.js (executar um arquivo js)
+
+npm (repositório de pacotes para plataforma node)
+
+Observações:
+No terminal power shell (reforço de segurança) executar como administrador
+Os pacotes são instalados na pasta raiz da aplicação
+
+npm -v (versão do gerenciador de pacotes)
+npm list (exibir os pacotes instalados)
+
+
+
+
+
+
+
+

@@ -1,0 +1,21 @@
+git: gestão e controle de versões
+
+Comandos básicos git
+
+Configurações iniciais:
+git config --global user.name "Seu nome"
+git config --global user.email "email GitHub"
+
+Clonar um repositório
+git clone link_do_repositório
+
+Sincronizar um repositório
+- Do GitHub para o computador
+git pull
+- Do computador para o GitHub
+git add .
+git commit -m "hello world"
+git push
+
+Dica: git status (verificar o status do repositório)
+Obs: Sempre que mudar algo no GitHub, primeiro usar o git pull e só depois o git push

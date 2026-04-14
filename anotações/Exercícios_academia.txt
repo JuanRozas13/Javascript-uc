@@ -1,0 +1,41 @@
+Exercício 1:
+Desenvolver no Scratch um APP para calcular o FCM (Frequência Cardíaca máxima) usando a fórmula de tanaka.
+
+A Frequência Cardíaca Máxima (FCM) é o número mais alto de batimentos por minuto (bpm) que o seu coração pode atingir em esforço máximo. Serve para definir zonas de treino.
+
+variáveis:
+fcm, idade (number)
+
+entrada:
+idade
+
+processamento:
+fcm = 208 - (0.7 * idade)
+
+saída:
+fcm
+______________________________________________________
+Exercício 2:
+Parte 1: Desenvolver um app no scratch para calcular o IMC
+Parte 2: Na ficha do aluno adicionar o IMC
+
+         peso
+imc = ___________
+              2
+        altura  
+
+variáveis:
+peso, altura, imc (number)
+
+entrada:
+peso, altura
+
+processamento:
+imc = peso / (altura * altura)
+
+saída:
+imc
+
+
+
+

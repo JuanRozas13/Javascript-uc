@@ -1,0 +1,200 @@
+Exercícios de lógica de programação:
+
+1) Cálculo do volume de um aquário:
+Crie um programa que calcule o volume de um aquário. O usuário deve inserir o comprimento, a largura e a altura do aquário. O programa deve calcular o volume e exibir o resultado em litros.
+
+// variáveis
+comprimento, largura, altura, volume
+
+// entrada
+comprimento, largura, altura
+
+// processamento
+volume = (comprimento * largura * altura) / 1000
+
+// saída
+volume
+
+--------------------------------------------------------------------
+2) Cálculo do consumo de combustível:
+Desenvolva um programa que calcule o consumo médio de combustível de um carro. O usuário deve inserir a distância percorrida e a quantidade de combustível consumido. O programa deve calcular e exibir o consumo médio (km/l).
+
+// variáveis
+distancia, litros, consumo
+
+// entrada
+distancia, litros
+
+// processamento
+consumo = distancia / litros
+
+// saída
+consumo
+
+--------------------------------------------------------------------
+3) Cálculo da área de um terreno:
+Desenvolva um programa que calcule a área de um terreno retangular. O usuário deve fornecer o comprimento e a largura do terreno, e o programa deve calcular a área em metros quadrados.
+
+--------------------------------------------------------------------
+4) Cálculo da Conversão de Real para Dólar:
+Desenvolva um programa que calcule o valor em dólares (US$) a partir de uma quantia em reais (R$), utilizando uma taxa de câmbio informada pelo usuário.
+
+--------------------------------------------------------------------
+5) Cálculo do tempo de viagem:
+Desenvolva um programa que calcule o tempo necessário para uma viagem. O usuário deve fornecer a distância a ser percorrida e a velocidade média do veículo. O programa deve calcular e exibir o tempo de viagem.
+
+--------------------------------------------------------------------
+6) Cálculo do valor de uma corrida de taxi (taxímetro):
+Desenvolva um programa que calcule o valor de uma corrida de táxi. O usuário deve fornecer a distância percorrida (km) e o valor fixo por quilômetro rodado. O programa deve calcular e exibir o valor total da corrida.
+
+--------------------------------------------------------------------
+7) Cálculo do valor da conta de luz:
+Desenvolva um programa que calcule o valor da conta de luz de uma residência. O usuário deve fornecer o consumo total em kWh e o valor da tarifa por kWh. O programa deve calcular e exibir o valor da conta(cálculo simples sem impostos ou descontos).
+
+--------------------------------------------------------------------
+8) Cálculo do troco:
+Desenvolva um programa que calcule o troco que um cliente deve receber após uma compra. O usuário deve fornecer o valor da compra e o valor pago. O programa deve calcular e exibir o valor do troco.
+
+--------------------------------------------------------------------
+9) Cálculo da quantidade de tijolos (tijolo maciço):
+Desenvolva um programa que calcule a quantidade de tijolos necessários para construir uma parede. O usuário deve fornecer as dimensões da parede e como base o tijolo maciço(tijolo comum). O programa deve calcular e exibir o número de tijolos necessários.
+
+Tamanho do tijolo comum: 20cm x 10cm (0.2m x 0.1m)
+
+                                  2  
+área do tijolo: 0.2 * 0.1 = 0.02 m
+
+Total de tijolos = área da parede (metros quadrados) / área do tijolo
+
+//variáveis
+total, alturaParede, larguraParede
+
+//Entrada
+alturaParede, larguraParede
+
+//Processamento
+total = (alturaParede * larguraParede) / 0.02
+
+//Saída
+total
+
+-----------------------------------------------------------------
+10) Cálculo do tempo de viagem:
+Desenvolva um programa que calcule o tempo necessário para uma viagem. O usuário deve fornecer a distância a ser percorrida e a velocidade média do veículo. O programa deve calcular e exibir o tempo de viagem.
+
+-----------------------------------------------------------------
+11) Cálculo da área de um triângulo:
+Crie um programa que calcule a área de um triângulo, dada sua base e altura.
+
+-----------------------------------------------------------------
+12) Conversão de milhas para quilômetros:
+Desenvolva um programa que converta uma distância em milhas para quilômetros.
+
+-----------------------------------------------------------------
+13) Cálculo da quantidade de latas de tinta:
+Desenvolva um programa que calcule a quantidade de latas de tinta necessárias para pintar uma parede, dado o tamanho da parede (em m²) e o rendimento da lata (em m² por lata).
+
+Quantidade de latas = área da parede / rendimento da lata
+
+-----------------------------------------------------------------
+14) Cálculo do consumo diário de água:
+Crie um programa que calcule a quantidade de água recomendada por dia para uma pessoa, baseado no seu peso. 
+
+-----------------------------------------------------------------
+15) Cálculo do IMC
+Crie um programa que calcule o IMC
+
+-----------------------------------------------------------------
+16) Criar um programa para calcular a porcentagem de um valor usando regra de 3, no seguinte formato:
+Exemplo:
+10% de 200 = 20
+
+200    -------   100%
+valor  -------    10% 
+
+valor x 100 = 200 x 10
+
+valor x 100 = 2000
+
+          2000
+valor =  ______ = 20
+           100
+
+________________________________
+Algoritmo
+
+X% de Y = valor
+
+variáveis
+x, y, valor (number)
+
+entrada
+x, y
+
+processamento
+
+y      -------  100
+valor  -------  x 
+
+valor * 100 = X * Y
+
+valor = (X * Y) / 100
+
+saída
+valor
+
+-----------------------------------------------------------------
+17) Criar um programa para calcular o valor de desconto, da seguinte forma:
+
+Valor total da compra: 500,00
+Desconto: 10%
+Valor a pagar: 450,00
+
+totalDesconto = valorTotal - desconto
+
+totalDesconto = valorTotal - ((desconto * valorTotal) / 100)
+totalDesconto =  500,00 - ((10 * 500) / 100)
+
+variáveis
+totalDesconto, valorTotal, desconto
+
+entrada:
+valorTotal, desconto
+
+processamento:
+totalDesconto = valorTotal - ((desconto * valorTotal) / 100)
+
+saída:
+totalDesconto
+
+-----------------------------------------------------------------
+18) Criar um programa para calcular o preço de venda de um produto da seguinte forma:
+
+Valor do produto (preço de compra): 50,00
+margem de lucro: 30%
+Valor de venda: 65,00
+
+Preço de venda = preço de custo + lucro
+
+Variáveis:
+precoCusto, lucro, precoVenda
+
+Entrada:
+precoCusto, lucro
+
+Processamento:
+precoVenda = precoCusto + ((lucro * precoCusto) / 100)
+
+Saída:
+precoVenda
+
+
+
+
+
+
+
+
+
+
+

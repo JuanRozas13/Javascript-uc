@@ -1,0 +1,89 @@
+Desafios porcentagem:
+1) Usando o scratch criar um APP para calcular a porcentagem de um valor usando regra de 3, no seguinte formato:
+Exemplo:
+10% de 200 = 20
+
+200    -------   100%
+valor  -------    10% 
+
+valor x 100 = 200 x 10
+
+valor x 100 = 2000
+
+          2000
+valor =  ______ = 20
+           100
+
+________________________________
+Algoritmo
+
+X% de Y = valor
+
+variáveis
+x, y, valor (number)
+
+entrada
+x, y
+
+processamento
+
+y      -------  100
+valor  -------  x 
+
+valor * 100 = X * Y
+
+valor = (X * Y) / 100
+
+saída
+valor
+
+________________________________________________
+2) Usando o scratch, calcular o valor de desconto, da seguinte forma:
+
+Valor total da compra: 500,00
+Desconto: 10%
+Valor a pagar: 450,00
+
+totalDesconto = valorTotal - desconto
+
+totalDesconto = valorTotal - ((desconto * valorTotal) / 100)
+totalDesconto =  500,00 - ((10 * 500) / 100)
+
+variáveis
+totalDesconto, valorTotal, desconto
+
+entrada:
+valorTotal, desconto
+
+processamento:
+totalDesconto = valorTotal - ((desconto * valorTotal) / 100)
+
+saída:
+totalDesconto
+
+
+________________________________________________
+3) Usando o scratch, calcular o preço de venda de um produto da seguinte forma:
+
+Valor do produto (preço de compra): 50,00
+margem de lucro: 30%
+Valor de venda: 65,00
+
+Preço de venda = preço de custo + lucro
+
+Variáveis:
+precoCusto, lucro, precoVenda
+
+Entrada:
+precoCusto, lucro
+
+Processamento:
+precoVenda = precoCusto + ((lucro * precoCusto) / 100)
+
+Saída:
+precoVenda
+
+
+
+
+
