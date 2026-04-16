@@ -38,9 +38,11 @@ Os pacotes são instalados na pasta raiz da aplicação
 npm -v (versão do gerenciador de pacotes)
 npm list (exibir os pacotes instalados)
 
+--------------------------------------------------
 
-
-
+1 - Identificar o problema 
+2 - Expêriencia do Usuario
+3 - Menos Código 
 
 
 
