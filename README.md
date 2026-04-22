@@ -19,7 +19,6 @@ Variáveis são espaços na memória do computador usado para guardar valores qu
 graph LR
 Memória
 Entrada --> Processamento --> Saída
-
 ```
 
 ## Operadores Aritméticos
