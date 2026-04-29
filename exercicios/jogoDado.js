@@ -28,4 +28,3 @@ do{
     }
     novoJogo = prompt('Deseja jogar novamente(s/n)')
 }while (novoJogo === 's' || novoJogo === 'S')
-
