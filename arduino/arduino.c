@@ -10,6 +10,9 @@ void setup() {
   pinMode(3, OUTPUT);  //VERMELHO
   pinMode(2, OUTPUT);  //VERDE
  
+  //Buzzer
+  pinMode(6, OUTPUT);
+
   //Botões
   pinMode(11, INPUT_PULLUP);  //botão amarelo
   pinMode(10, INPUT_PULLUP);  //botão azul
@@ -30,16 +33,21 @@ void loop() {
   Serial.println(botaoAmarelo);
   if (botaoAmarelo == 0) {
     digitalWrite(5, HIGH);
+    tone(6, 349);//FÁ
   } else if (botaoAzul == 0) {
     digitalWrite(4, HIGH);
-  } else if (botaoVermelho == 0) {
+    tone(6, 330);//MI
+  } else if (botaoVermelho == 0) { 
     digitalWrite(3, HIGH);
+    tone(6, 294);//RÉ
   } else if (botaoVerde == 0) {
     digitalWrite(2, HIGH);
+    tone(6, 262);//DÓ
   } else {
     digitalWrite(5, LOW);
     digitalWrite(4, LOW);
     digitalWrite(3, LOW);
     digitalWrite(2, LOW);
+    noTone(6);
   }
 }
