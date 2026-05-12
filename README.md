@@ -147,3 +147,12 @@ switch (valor) {
     // o código é repetido enquanto a condição for verdadeira
 }    while (condição)
 ```
+
+
+### Array
+```javascript
+    let alunos = ['Juan', 'Maria', 'José', 'ana']
+    console.log(alunos)
+```
+
+
