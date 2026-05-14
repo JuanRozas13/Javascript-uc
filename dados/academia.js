@@ -9,7 +9,8 @@ const prompt = require('prompt-sync')()
 require('colors')
 
 // Variaveis globais
-let nome, idade, peso, altura, vip
+let nome, idade, peso, altura, vip, busca
+
 
 // contador de matricula
 let matricula = 1
@@ -19,14 +20,14 @@ let opcaoMenu, opcaoConsulta, opcaoRelatorio
 let alunos = []
 
 /*
-  Estrutura de dados:
-  [0] matricula
-  [1] nome
-  [2] idade
-  [3] peso
-  [4] altura
-  [5] vip
- */
+Estrutura de dados:
+[0] matricula
+[1] nome
+[2] idade
+[3] peso
+[4] altura
+[5] vip
+*/
 
 
 // Main                >>>>>>>>>>>>>>>>>>>>
@@ -75,8 +76,8 @@ function mainAcademia() {
             case 6:
                 gerarRelatorios()
                 break;
-            
-            case 0: 
+
+            case 0:
                 console.log('Encerrando o sistema...')
                 break;
 
@@ -134,7 +135,7 @@ function cadastrarAluno() {
 // CRUD - read         >>>>>>>>>>>>>>>>>>>>
 function consultarAlunos() {
     //Sub Menu    
-   do {
+    do {
         console.clear()
         console.log('=====CONSULTA DE ALUNO======')
         console.log('')
@@ -145,9 +146,7 @@ function consultarAlunos() {
 
         opcaoConsulta = Number(prompt('Escolha: '))
 
-        // if (opcaoConsulta !== 1 || opcaoConsulta !== 2 || opcaoConsulta !== 0){
-        //     return
-        // }
+
 
         switch (opcaoConsulta) {
             case 1:
@@ -160,33 +159,66 @@ function consultarAlunos() {
 
             case 0:
                 break;
-        
+
             default:
                 console.log('')
                 console.log('Opção invalida')
                 prompt('Enter')
         }
-    } while ( opcaoConsulta !== 0)
-    
+
+    } while (opcaoConsulta !== 0)
+
+
+
     //Buscar aluno
-    function buscarAluno(){
+    function buscarAluno() {
         console.clear()
         console.log('=====BUSCAR ALUNO=====')
         console.log('')
 
-        // console.log(`Alunos cadastrados ${alunos.length}`)
+        // Logica princial (Busca pelo nome)
+        // .toLocaleLowerCase - Usado para converter tudo em letras minúsculas
+        busca = prompt('Digite o nome do aluno: ').toLowerCase()
 
+
+        // Pesquisa(Filtro) na estrutura de dados 
+        let encontrados = alunos.filter((a) => {
+            return a[1].toLowerCase().includes(busca)
+        })
+
+        // Validação
+        if (encontrados.length === 0) {
+            console.log('')
+            console.log('Aluno não encontrado')
+        } else {
+
+            let alunoEncontrado = encontrados
+                .map((a) => {
+                    return {
+                        Matrícula: a[0],
+                        Nome: a[1],
+                        Idade: a[2],
+                        Peso: a[3],
+                        Altura: a[4],
+                        Vip: a[5]
+                    }
+                })
+
+            console.table(alunoEncontrado)
+        }
+
+        console.log('')
         prompt('Enter...')
     }
 
     //Listar aluno
-    function listarAlunos(){
+    function listarAlunos() {
         console.clear()
         console.log('=====LISTA DE ALUNOS=====')
         console.log('')
 
         // Validação
-        if (alunos.length === 0){
+        if (alunos.length === 0) {
             console.log('Nenhum aluno cadastrado')
         } else {
             // console.table(alunos)
@@ -216,6 +248,8 @@ function consultarAlunos() {
 
         prompt('Enter...')
     }
+
+
 }
 // CRUD - read fim     <<<<<<<<<<<<<<<<<<<<
 
@@ -249,6 +283,74 @@ function gerarFichaAluno() {
     console.log('=====FICHA DO ALUNO======')
     console.log('')
 
+    let buscarMatricula = Number(prompt('Digite a matricula do aluno: '))
+
+    // Logica principal (Buscar index da estruturade dados)
+    let indice = alunos.findIndex((a) => {
+        return a[0] === buscarMatricula
+    })
+
+    //  Validação da busca(pelo index do aluno)
+    if (indice === -1) {
+        console.log('Aluno não encontrado')
+        console.log('')
+    } else {
+        // Dados do aluno
+        nome = alunos[indice][1]
+        idade = alunos[indice][2]
+        peso = alunos[indice][3]
+        altura = alunos[indice][4]
+        vip = alunos[indice][5]
+
+        // Status vip
+        let statusVip
+        if (vip === true) {
+            statusVip = 'Sim (direito a personal trainer)'
+        } else {
+            statusVip = 'Não (sem direito a personal trainer)'
+        }
+
+        // calculo 
+        let fcm = (208 - (0.7 * idade))
+        let agua = (peso * 35) / 1000
+        let imc = (peso / (altura * altura))
+        let pesoIdealMin = (18.5 * (altura * altura)).toFixed(2)
+        let pesoIdealMax = (24.9 * (altura * altura)).toFixed(2)
+        let statusImc
+
+        if (imc < 18.5) {
+            statusImc = 'Abaixo do peso'
+        } else if (imc < 25) {
+            statusImc = 'Peso normal'
+        } else if (imc < 30) {
+            statusImc = 'Sobre Peso'
+        } else if (imc < 35) {
+            statusImc = 'Obesidade grau I'
+        } else if (imc < 40) {
+            statusImc = 'Obesidade grau II'
+        } else {
+            statusImc = 'Obesidade grau III'
+        }
+
+        // Exibir ficha do aluno
+        console.log('-------------------------------------')
+        console.log('            FICHA DO ALUNO           ')
+        console.log('-------------------------------------')
+        console.log(`Matricula ${buscarMatricula}`)
+        console.log(`nome: ${nome}`)
+        console.log(`idade: ${idade}`)
+        console.log(`peso: ${peso}`)
+        console.log(`altura: ${altura}`)
+        console.log(`vip: ${statusVip}`)
+        console.log('')
+        console.log(`FCM: ${fcm.toFixed(1)} bpm`)
+        console.log(`Água recomendada: ${agua.toFixed(1)} litros/dia`)
+        console.log(`IMC: ${imc.toFixed(2)} ${statusImc}`)
+        console.log(`Faixa de peso ideal ${pesoIdealMin}Kg até ${pesoIdealMax}Kg`)
+        console.log('--------------------------------------')
+    }
+
+    console.log('')
     prompt('ENTER...')
 }
 // Ficha do aluno fim   <<<<<<<<<<<<<<<<<<<<
@@ -271,15 +373,15 @@ function gerarRelatorios() {
 
         switch (opcaoRelatorio) {
             case 1:
-                gerarRelatorioVip() 
+                gerarRelatorioVip()
                 break;
 
             case 2:
-                gerarRelatorioMediaDeIdade() 
+                gerarRelatorioMediaDeIdade()
                 break;
 
             case 3:
-                gerarRelatorioImc() 
+                gerarRelatorioImc()
                 break;
 
             case 0:
@@ -315,6 +417,54 @@ function gerarRelatorios() {
         console.clear()
         console.log('=====IMC DOS ALUNOS======')
         console.log('')
+
+        // Logica principal(map() obter as porcentagem do imc da tabela da estrutura de dados)
+        // Validação
+        if (alunos.length === 0) {
+            console.log('Nenhum aluno cadastrado')
+        } else {
+            let abaxoDoPeso = 0
+            let pesoNormal = 0
+            let acimaDoPeso = 0
+
+            alunos.map((a) => {
+                let peso = a[3]
+                let altura = a[4]
+                let imc = (peso / (altura * altura))
+
+                if (imc < 18.5) {
+                    abaxoDoPeso++
+                } else if (imc < 25) {
+                    pesoNormal++
+                } else {
+                    acimaDoPeso++
+                }
+            })
+
+            // Cálculo
+            let total = alunos.length
+            let percAbaixo = ((abaxoDoPeso / total) * 100)
+            let percNormal = ((pesoNormal / total) * 100)
+            let percAcima = ((acimaDoPeso / total) * 100)
+
+            // Mini Gráfico
+            let graficoAbaixo = '■'.repeat(Math.round(percAbaixo / 2))
+            let graficoNormal = '■'.repeat(Math.round(percNormal / 2))
+            let graficoAcima = '■'.repeat(Math.round(percAcima / 2))
+
+            console.log(`Abaixo do peso: ${percAbaixo.toFixed(1)}%`)
+            console.log(graficoAbaixo)
+            console.log('')
+
+            console.log(`Abaixo do peso: ${percNormal.toFixed(1)}%`)
+            console.log(graficoNormal)
+            console.log('')
+            
+            console.log(`Abaixo do peso: ${percAcima.toFixed(1)}%`)
+            console.log(graficoAcima)
+            console.log('')
+        }
+
 
         prompt('ENTER...')
     }
