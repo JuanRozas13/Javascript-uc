@@ -1,4 +1,4 @@
-﻿
+
 
 const prompt = require('prompt-sync')()
 
@@ -116,7 +116,7 @@ function consultarAlunos() {
                 break
             default:
                 console.log("")
-                console.log("OpÃ§Ã£o invÃ¡lida!")
+                console.log("Opção Invalida!")
                 prompt("ENTER...")
         }
 
@@ -405,7 +405,7 @@ function gerarRelatorios() {
                 break
             default:
                 console.log("")
-                console.log("OpÃ§Ã£o invÃ¡lida!")
+                console.log("Opção invalida!")
                 prompt("ENTER...")
         }
     } while (opcaoRelatorio !== 0)
